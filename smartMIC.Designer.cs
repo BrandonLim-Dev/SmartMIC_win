@@ -41,6 +41,7 @@ namespace SmartMIC
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbConversationList = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbMicID = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@ namespace SmartMIC
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cbMicList = new System.Windows.Forms.ComboBox();
-            this.lbConversationList = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -196,6 +196,15 @@ namespace SmartMIC
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "회의 내용";
+            // 
+            // lbConversationList
+            // 
+            this.lbConversationList.FormattingEnabled = true;
+            this.lbConversationList.ItemHeight = 12;
+            this.lbConversationList.Location = new System.Drawing.Point(6, 17);
+            this.lbConversationList.Name = "lbConversationList";
+            this.lbConversationList.Size = new System.Drawing.Size(663, 292);
+            this.lbConversationList.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -343,19 +352,19 @@ namespace SmartMIC
             // 시스템설정ToolStripMenuItem
             // 
             this.시스템설정ToolStripMenuItem.Name = "시스템설정ToolStripMenuItem";
-            this.시스템설정ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.시스템설정ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.시스템설정ToolStripMenuItem.Text = "시스템 설정";
             // 
             // 버전정보ToolStripMenuItem
             // 
             this.버전정보ToolStripMenuItem.Name = "버전정보ToolStripMenuItem";
-            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.버전정보ToolStripMenuItem.Text = "버전 정보";
             // 
             // 시스템종료ToolStripMenuItem
             // 
             this.시스템종료ToolStripMenuItem.Name = "시스템종료ToolStripMenuItem";
-            this.시스템종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.시스템종료ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.시스템종료ToolStripMenuItem.Text = "시스템 종료";
             // 
             // 도움말ToolStripMenuItem
@@ -458,20 +467,12 @@ namespace SmartMIC
             this.cbMicList.Size = new System.Drawing.Size(175, 20);
             this.cbMicList.TabIndex = 0;
             // 
-            // lbConversationList
-            // 
-            this.lbConversationList.FormattingEnabled = true;
-            this.lbConversationList.ItemHeight = 12;
-            this.lbConversationList.Location = new System.Drawing.Point(6, 17);
-            this.lbConversationList.Name = "lbConversationList";
-            this.lbConversationList.Size = new System.Drawing.Size(663, 292);
-            this.lbConversationList.TabIndex = 0;
-            // 
             // smartMIC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 468);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnLogin);

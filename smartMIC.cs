@@ -11,6 +11,8 @@ using System.Net.WebSockets;
 using WebSocketSharp;
 using WebSocket = WebSocketSharp.WebSocket;
 using ErrorEventArgs = WebSocketSharp.ErrorEventArgs;
+using NAudio.CoreAudioApi;
+using NAudio.Wave;
 
 
 namespace SmartMIC
@@ -19,7 +21,8 @@ namespace SmartMIC
     {
         #region Global Variable
         private WebSocket ws;
-
+        public MMDeviceEnumerator deviceEnumerator = new MMDeviceEnumerator();
+        public MMDevice micDevice;
         #endregion
 
 
@@ -34,7 +37,7 @@ namespace SmartMIC
         /// </summary>
         private void smartMIC_Load(object sender, EventArgs e)
         {
-
+            SelectMICList();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -57,11 +60,15 @@ namespace SmartMIC
         {
             try
             {
-
+                MMDeviceCollection devices = deviceEnumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active);
+                foreach (var device in devices)
+                {
+                    cbMicList.Items.Add(device.FriendlyName);
+                }
             }
             catch (Exception e)
             {
-
+                AddErrorLog(e.ToString());
             }
         }
         #endregion
@@ -74,30 +81,30 @@ namespace SmartMIC
         /// </summary>
         private void initWebsocket()
         {
-            try
-            {
-                ws = new WebSocketSharp.WebSocket();
-                ws.OnMessage += WebSocket_OnMessage;
-
-                ws.OnOpen += (sender, e) =>
-                {
-
-                };
-
-                ws.OnClose += (sender, e) =>
-                {
-
-                };
-
-                ws.OnError += (sender, e) =>
-                {
-
-                };
-            }
-            catch (Exception e)
-            {
-
-            }
+            //try
+            //{
+            //    ws = new WebSocketSharp.WebSocket();
+            //    ws.OnMessage += WebSocket_OnMessage;
+            //
+            //    ws.OnOpen += (sender, e) =>
+            //    {
+            //
+            //    };
+            //
+            //    ws.OnClose += (sender, e) =>
+            //    {
+            //
+            //    };
+            //
+            //    ws.OnError += (sender, e) =>
+            //    {
+            //
+            //    };
+            //}
+            //catch (Exception e)
+            //{
+            //
+            //}
         }
 
         private void WebSocket_OnMessage(object sender, MessageEventArgs e)
@@ -111,18 +118,21 @@ namespace SmartMIC
         #endregion
 
         #region Self Library
-        private void AddErrorLog()
+        private void AddErrorLog(String ErrMessage)
         {
-
+            String strMsg = "---[ERROR]:" + ErrMessage;
+            lbConversationList.Items.Add(strMsg);
         }
 
-        private void AddTextResult()
+        private void AddTextResult(String Talker, String Text)
         {
-
+            String strMsg = "[" + Talker + "] : " + Text;
+            lbConversationList.Items.Add(strMsg);
         }
-        private void AddMeetingEventLog()
+        private void AddMeetingEventLog(String Talker, String Message)
         {
-
+            String strMsg = "------------------[" + Talker + "]" + Message + "------------------";
+            lbConversationList.Items.Add(strMsg);
         }
 
         #endregion
