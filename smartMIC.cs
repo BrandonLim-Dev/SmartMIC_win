@@ -54,6 +54,7 @@ namespace SmartMIC
         private void smartMIC_Load(object sender, EventArgs e)
         {
             SelectMICList();
+            cbMicList.SelectedIndex = 0;
             GetMACAddress();
         }
 
@@ -139,6 +140,10 @@ namespace SmartMIC
             Console.WriteLine("△ 메시지 Logging : " + logFlag);
             Console.WriteLine("△ 버전 : " + version);
             Console.WriteLine("---------------------------------------");
+
+            tbIPAddress.Text = ip;
+            tbPortNumber.Text = port;
+            tbMicID.Text = id;
 
         }
         #endregion

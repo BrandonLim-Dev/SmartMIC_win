@@ -105,6 +105,7 @@ namespace SmartMIC
             this.tbMinutesStarttime.ReadOnly = true;
             this.tbMinutesStarttime.Size = new System.Drawing.Size(221, 21);
             this.tbMinutesStarttime.TabIndex = 9;
+            this.tbMinutesStarttime.TabStop = false;
             // 
             // tbMinutesMeetingRoom
             // 
@@ -114,6 +115,7 @@ namespace SmartMIC
             this.tbMinutesMeetingRoom.ReadOnly = true;
             this.tbMinutesMeetingRoom.Size = new System.Drawing.Size(221, 21);
             this.tbMinutesMeetingRoom.TabIndex = 8;
+            this.tbMinutesMeetingRoom.TabStop = false;
             // 
             // tbMinutesJoinedMem
             // 
@@ -123,6 +125,7 @@ namespace SmartMIC
             this.tbMinutesJoinedMem.ReadOnly = true;
             this.tbMinutesJoinedMem.Size = new System.Drawing.Size(599, 21);
             this.tbMinutesJoinedMem.TabIndex = 7;
+            this.tbMinutesJoinedMem.TabStop = false;
             // 
             // tbMinutesTopic
             // 
@@ -132,6 +135,7 @@ namespace SmartMIC
             this.tbMinutesTopic.ReadOnly = true;
             this.tbMinutesTopic.Size = new System.Drawing.Size(308, 21);
             this.tbMinutesTopic.TabIndex = 6;
+            this.tbMinutesTopic.TabStop = false;
             // 
             // tbMinutesName
             // 
@@ -141,6 +145,7 @@ namespace SmartMIC
             this.tbMinutesName.ReadOnly = true;
             this.tbMinutesName.Size = new System.Drawing.Size(308, 21);
             this.tbMinutesName.TabIndex = 5;
+            this.tbMinutesName.TabStop = false;
             // 
             // label5
             // 
@@ -278,6 +283,7 @@ namespace SmartMIC
             this.tbUserName.ReadOnly = true;
             this.tbUserName.Size = new System.Drawing.Size(109, 21);
             this.tbUserName.TabIndex = 17;
+            this.tbUserName.TabStop = false;
             // 
             // tbMicName
             // 
@@ -287,6 +293,7 @@ namespace SmartMIC
             this.tbMicName.ReadOnly = true;
             this.tbMicName.Size = new System.Drawing.Size(109, 21);
             this.tbMicName.TabIndex = 10;
+            this.tbMicName.TabStop = false;
             // 
             // label12
             // 

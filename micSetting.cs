@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.NetworkInformation;
 
 namespace SmartMIC
 {
@@ -17,6 +18,7 @@ namespace SmartMIC
         /// </summary>
         #region Global Variable
         public sysSettingGetEventHandler sysSettingGetEvent;
+        private string macAddr;
         #endregion
 
         public micSetting()
@@ -26,13 +28,31 @@ namespace SmartMIC
 
         private void micSetting_Load(object sender, EventArgs e)
         {
-            tbIPAddress.Text = "192.168.50.100";
+            tbIPAddress.Text = "19216850100";
             tbPort.Text = "28083";
             cbSercureFlag.Text = "예";
             tbIPAddress.Text = "";
             cbSamplerate.Text = "8000";
             cbLogFlag.Text = "아니오";
-            tbVersion.Text = "";   
+            tbVersion.Text = "";
+
+            GetMACAddress();
+        }
+
+        ///<summary>
+        ///
+        /// </summary>
+        private void GetMACAddress()
+        {
+            macAddr =
+                (
+                    from nic in NetworkInterface.GetAllNetworkInterfaces()
+                    where nic.OperationalStatus == OperationalStatus.Up
+                    select nic.GetPhysicalAddress().ToString()
+                ).FirstOrDefault();
+
+            Console.WriteLine("macAddr : " + macAddr);
+            tbIdentity.Text = macAddr;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
