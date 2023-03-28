@@ -82,6 +82,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="micSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="micSetting.Designer.cs">
+      <DependentUpon>micSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="smartMIC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="micSetting.resx">
+      <DependentUpon>micSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="smartMIC.resx">
       <DependentUpon>smartMIC.cs</DependentUpon>
     </EmbeddedResource>
