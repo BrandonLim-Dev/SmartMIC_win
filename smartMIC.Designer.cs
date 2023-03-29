@@ -367,7 +367,7 @@ namespace SmartMIC
             // 
             this.버전정보ToolStripMenuItem.Name = "버전정보ToolStripMenuItem";
             this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.버전정보ToolStripMenuItem.Text = "버전 정보";
+            this.버전정보ToolStripMenuItem.Text = "시스템 정보";
             this.버전정보ToolStripMenuItem.Click += new System.EventHandler(this.버전정보ToolStripMenuItem_Click);
             // 
             // 시스템종료ToolStripMenuItem

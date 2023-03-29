@@ -28,10 +28,10 @@ namespace SmartMIC
 
         private void micSetting_Load(object sender, EventArgs e)
         {
-            tbIPAddress.Text = "19216850100";
+            tbIPAddress.Text = "192.168.50.100";
             tbPort.Text = "28083";
             cbSercureFlag.Text = "예";
-            tbIPAddress.Text = "";
+            tbIdentity.Text = "";
             cbSamplerate.Text = "8000";
             cbLogFlag.Text = "아니오";
             tbVersion.Text = "";
@@ -66,7 +66,13 @@ namespace SmartMIC
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void micSetting_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }

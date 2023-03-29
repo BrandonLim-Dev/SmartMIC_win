@@ -214,6 +214,7 @@ namespace SmartMIC
             this.Controls.Add(this.label1);
             this.Name = "micSetting";
             this.Text = "마이크 설정";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.micSetting_FormClosing);
             this.Load += new System.EventHandler(this.micSetting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
