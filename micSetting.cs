@@ -21,22 +21,30 @@ namespace SmartMIC
         private string macAddr;
         #endregion
 
-        public micSetting()
+        public micSetting(string ipAddr, string portNum, string secure, string id, string sampleRate, string logFlag, string ver)
         {
             InitializeComponent();
+
+            tbIPAddress.Text = ipAddr;
+            tbPort.Text = portNum;
+            cbSercureFlag.Text = secure;
+            tbIdentity.Text = id;
+            cbSamplerate.Text = sampleRate;
+            cbLogFlag.Text = logFlag;
+            tbVersion.Text = ver;
         }
 
         private void micSetting_Load(object sender, EventArgs e)
         {
-            tbIPAddress.Text = "192.168.50.100";
-            tbPort.Text = "28083";
-            cbSercureFlag.Text = "예";
-            tbIdentity.Text = "";
-            cbSamplerate.Text = "8000";
-            cbLogFlag.Text = "아니오";
-            tbVersion.Text = "";
-
-            GetMACAddress();
+            //tbIPAddress.Text = "192.168.50.100";
+            //tbPort.Text = "28083";
+            //cbSercureFlag.Text = "예";
+            //tbIdentity.Text = "";
+            //cbSamplerate.Text = "8000";
+            //cbLogFlag.Text = "아니오";
+            //tbVersion.Text = "";
+            //
+            //GetMACAddress();
         }
 
         ///<summary>

@@ -29,6 +29,7 @@ namespace SmartMIC
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbMinutesStarttime = new System.Windows.Forms.TextBox();
             this.tbMinutesMeetingRoom = new System.Windows.Forms.TextBox();
@@ -70,6 +71,7 @@ namespace SmartMIC
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cbMicList = new System.Windows.Forms.ComboBox();
+            this.loginCtrlTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -359,21 +361,21 @@ namespace SmartMIC
             // 시스템설정ToolStripMenuItem
             // 
             this.시스템설정ToolStripMenuItem.Name = "시스템설정ToolStripMenuItem";
-            this.시스템설정ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.시스템설정ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.시스템설정ToolStripMenuItem.Text = "시스템 설정";
             this.시스템설정ToolStripMenuItem.Click += new System.EventHandler(this.시스템설정ToolStripMenuItem_Click);
             // 
             // 버전정보ToolStripMenuItem
             // 
             this.버전정보ToolStripMenuItem.Name = "버전정보ToolStripMenuItem";
-            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.버전정보ToolStripMenuItem.Text = "시스템 정보";
             this.버전정보ToolStripMenuItem.Click += new System.EventHandler(this.버전정보ToolStripMenuItem_Click);
             // 
             // 시스템종료ToolStripMenuItem
             // 
             this.시스템종료ToolStripMenuItem.Name = "시스템종료ToolStripMenuItem";
-            this.시스템종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.시스템종료ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.시스템종료ToolStripMenuItem.Text = "시스템 종료";
             this.시스템종료ToolStripMenuItem.Click += new System.EventHandler(this.시스템종료ToolStripMenuItem_Click);
             // 
@@ -477,12 +479,17 @@ namespace SmartMIC
             this.cbMicList.Size = new System.Drawing.Size(175, 20);
             this.cbMicList.TabIndex = 0;
             // 
+            // loginCtrlTimer
+            // 
+            this.loginCtrlTimer.Interval = 3000;
+            this.loginCtrlTimer.Tag = "loginControl-001";
+            this.loginCtrlTimer.Tick += new System.EventHandler(this.loginCtrlTimer_Tick);
+            // 
             // smartMIC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 468);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnLogin);
@@ -494,6 +501,7 @@ namespace SmartMIC
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "smartMIC";
             this.Text = "smartMIC - windows ver.";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.smartMIC_FormClosing);
             this.Load += new System.EventHandler(this.smartMIC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -553,6 +561,7 @@ namespace SmartMIC
         private System.Windows.Forms.TextBox tbMicID;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ListBox lbConversationList;
+        private System.Windows.Forms.Timer loginCtrlTimer;
     }
 }
 
